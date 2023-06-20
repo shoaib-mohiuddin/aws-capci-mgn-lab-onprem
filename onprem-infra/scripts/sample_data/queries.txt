@@ -12,7 +12,7 @@ CREATE TABLE contacts(
       FOREIGN KEY(company_id)
       REFERENCES companies(company_id)
 );
-
+----- for postgresql-------
 COPY companies
 FROM '/tmp/companies.csv'
 DELIMITER ','
@@ -26,6 +26,7 @@ CSV HEADER;
 SELECT * FROM companies;
 Select * FROM contacts;
 
+------ for mysql-------
 LOAD DATA INFILE '/var/lib/mysql-files/companies.csv' 
 INTO TABLE companies 
 FIELDS TERMINATED BY ',' 
@@ -37,3 +38,8 @@ INTO TABLE contacts
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 IGNORE 1 ROWS;
+
+----- for DMS replication, this is necessary ---------
+
+CREATE USER 'phpmyadmin'@'dms_repl_inst_pri_ip' IDENTIFIED BY 'Abcd1234!';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'phpmyadmin'@'10.0.28.90' WITH GRANT OPTION; FLUSH PRIVILEGES;
