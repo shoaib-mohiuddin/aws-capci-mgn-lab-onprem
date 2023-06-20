@@ -60,8 +60,7 @@ jobs:
           framework: terraform 
           download_external_modules: true
           # soft_fail: true
-          # skip_check: CKV_AWS_111,CKV2_AWS_23,CKV_AWS_103,CKV2_AWS_28,CKV2_AWS_38,CKV2_AWS_19,CKV2_AWS_12,CKV2_AWS_39,CKV2_AWS_11,CKV_AWS_356,CKV_AWS_293,CKV_AWS_354,CKV_AWS_353
-
+          skip_check: CKV_AWS_356,CKV_AWS_111,CKV2_AWS_12,CKV2_AWS_19,CKV2_AWS_11
   infracost:
     name: Infracost
     if: github.event_name == 'pull_request'
