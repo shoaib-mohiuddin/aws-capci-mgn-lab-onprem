@@ -1,4 +1,4 @@
-name: Capci Migration Lab CI/CD Pipeline
+name: Capci Migration Lab CI/CD Pipeline for on-premises virtual infra simulation
 
 on: 
   push:
