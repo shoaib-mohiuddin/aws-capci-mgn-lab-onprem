@@ -6,13 +6,9 @@ repos:
     - id: terraform_validate
     # - id: terraform_tflint
     # - id: terraform_tfsec
-    # - id: terraform_docs
+    - id: terraform_docs
     # - id: terraform_checkov
-- repo: https://github.com/terraform-docs/terraform-docs
-  rev: v0.16.0
-  hooks:
-    - id: terraform-docs-go
-      args: [“markdown”, “table”, “--output-file”, “README.md”, “../“]
+
 - repo: https://github.com/awslabs/git-secrets
   rev: master # Get the latest from: https://github.com/awslabs/git-secrets
   hooks:
@@ -22,4 +18,9 @@ repos:
       entry: 'git-secrets --pre_commit_hook'
       language: script
       # files: \.(js|py|sh|yml|yaml|json|tf)$
-      
+
+# - repo: https://github.com/terraform-docs/terraform-docs
+#   rev: v0.16.0
+#   hooks:
+#     - id: terraform-docs-go
+#       args: [“markdown”, “table”, “--output-file”, “README.md”, “../“]
