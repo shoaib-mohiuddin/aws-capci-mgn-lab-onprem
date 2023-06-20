@@ -33,6 +33,6 @@ variable "tags" {
   type        = map(string)
 }
 
-# variable "foo" {
-#   type = string
-# }
+variable "foo" {
+  type = string
+}
