@@ -7,7 +7,6 @@ repos:
     # - id: terraform_tflint
     # - id: terraform_tfsec
     - id: terraform_docs
-      args: [“markdown”, “table”, “--output-file”, “README.md”, “../“]
     # - id: terraform_checkov
 
 - repo: https://github.com/awslabs/git-secrets
