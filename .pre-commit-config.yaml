@@ -8,6 +8,8 @@ repos:
     # - id: terraform_tflint
     # - id: terraform_tfsec
     - id: terraform_docs
+      args:
+        - --hook-config=--path-to-file=../README.md        
     # - id: terraform_checkov
 
 - repo: https://github.com/awslabs/git-secrets

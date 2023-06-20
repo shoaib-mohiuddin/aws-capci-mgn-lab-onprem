@@ -1,4 +1,4 @@
-name: Capci Migration Lab CI/CD Pipeline
+name: Capci Migration Lab CI/CD Pipeline for on-premises virtual infra simulation
 
 on: 
   push:
@@ -111,7 +111,7 @@ jobs:
                                      --repo=$GITHUB_REPOSITORY \
                                      --github-token=${{github.token}} \
                                      --pull-request=${{github.event.pull_request.number}} \
-                                     --behavior=new
+                                     --behavior=update
 
   terraform-deploy:
     name: Terraform deploy
@@ -199,7 +199,7 @@ jobs:
 
             </details>
 
-            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ matrix.working-directory }}\`, Workflow: \`${{ github.workflow }}\`*`;
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ working-directory }}\`, Workflow: \`${{ github.workflow }}\`*`;
 
             // 3. If we have a comment, update it, otherwise create a new one
             if (botComment) {
