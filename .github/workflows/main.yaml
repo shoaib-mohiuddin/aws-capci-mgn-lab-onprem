@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .
+        working-directory: onprem-infra
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -56,11 +56,12 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          directory: .
+          directory: onprem-infra
           framework: terraform 
           download_external_modules: true
           # soft_fail: true
           skip_check: CKV_AWS_356,CKV_AWS_111,CKV2_AWS_12,CKV2_AWS_19,CKV2_AWS_11
+
   infracost:
     name: Infracost
     if: github.event_name == 'pull_request'
@@ -71,7 +72,7 @@ jobs:
       pull-requests: write
 
     env:
-      TF_ROOT: .
+      TF_ROOT: onprem-infra
 
     steps:
       - name: Setup Infracost
@@ -124,7 +125,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: .
+        working-directory: onprem-infra
     env:
       ROLE_TO_ASSUME: "${{ secrets.AWS_IAM_ROLE_ARN }}"
       AWS_REGION: "${{ secrets.AWS_REGION }}"
