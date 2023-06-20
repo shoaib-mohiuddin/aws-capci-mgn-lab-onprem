@@ -10,14 +10,6 @@ repos:
     - id: terraform_docs
     # - id: terraform_checkov
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.1.0
-  hooks:
-    - id: trailing-whitespace
-    - id: end-of-file-fixer
-    - id: check-yaml
-    - id: check-added-large-files
-
 - repo: https://github.com/awslabs/git-secrets
   rev: master # Get the latest from: https://github.com/awslabs/git-secrets
   hooks:
@@ -27,6 +19,14 @@ repos:
       entry: 'git-secrets --pre_commit_hook'
       language: script
       # files: \.(js|py|sh|yml|yaml|json|tf)$
+
+# - repo: https://github.com/pre-commit/pre-commit-hooks
+#   rev: v4.1.0
+#   hooks:
+#     - id: trailing-whitespace
+#     - id: end-of-file-fixer
+#     - id: check-yaml
+#     - id: check-added-large-files
 
 # - repo: https://github.com/terraform-docs/terraform-docs
 #   rev: v0.16.0
