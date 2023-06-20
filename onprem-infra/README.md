@@ -47,7 +47,6 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_foo"></a> [foo](#input\_foo) | n/a | `string` | n/a | yes |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | EC2 instance type | `string` | n/a | yes |
 | <a name="input_mysql_root_password"></a> [mysql\_root\_password](#input\_mysql\_root\_password) | MySQL root password | `string` | n/a | yes |
 | <a name="input_number_of_azs"></a> [number\_of\_azs](#input\_number\_of\_azs) | Required number of Availibility Zones | `number` | n/a | yes |

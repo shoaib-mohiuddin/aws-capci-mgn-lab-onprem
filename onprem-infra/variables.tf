@@ -32,7 +32,3 @@ variable "tags" {
   description = "Tags for the resources"
   type        = map(string)
 }
-
-variable "foo" {
-  type = string
-}
